@@ -5,14 +5,15 @@ import './Sidebar.css'
 export default function SideBar()  {
     return (
         <div className="sidebar">
-            <h2 className="sidebar-title">Grupo 6</h2>
-            <nav className="sidebar-nav">
-            <Link to='/' >Portada</Link>
-            <Link to='/bitacora'>Bitacora</Link>
-            <Link to='/integrantes'>Integrantes</Link>
-            <Link to='/jsondata'>JSON Data</Link>
-            <Link to='/apidata'>API Data</Link>
-            </nav>
-        </div>
-    );
+         {/* Título o logo del grupo */}
+      <div className="sidebar-title">Grupo 6</div>
+
+      {/* Menú de navegación */}
+      <nav className="sidebar-nav">
+        <a href="/">Portada</a>
+        <a href="/bitacora">Bitácora</a>
+        <a href="/integrantes">Integrantes</a>
+      </nav>
+    </div>
+  );
 }

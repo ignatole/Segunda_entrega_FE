@@ -1,22 +1,32 @@
+/* Contenedor principal de la portada*/
 .portada {
-    width: 100vw;
-    height: 100vh;
+
+    position: absolute;
+    top: 0;
+    left: 160px;
+    right: 0;
+    bottom: 0;
     background-size: cover;
     background-position: center;
     transition: background-image 1s ease-in-out;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: flex-start;
+}
+
+.portada .overlay
+{
     position: relative;
-}
-
-.overlay {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 3rem;
-    border-radius: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
     text-align: center;
+    background: none;
+    padding: 2rem 3rem;
+    margin-top: 5rem;
+    z-index: 1;
 }
-
 .titulo {
     font-family: 'Get schwifty', cursive;
     font-size: 3rem;
@@ -28,4 +38,41 @@
     font-size: 1.2rem;
     color: #fff;
     margin-top: 1rem;
+}
+
+.descripcion {
+    font-size: 1.2rem;
+    color: #ddd;
+    margin-top: 1rem;
+    max-width: 600px;
+    line-height: 1.5;
+}
+
+.portada::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+
+@media (max-width: 768px) {
+    .portada {
+        left: 0;
+    }
+    .overlay {
+        padding: 1rem 1.5rem;
+    }
+    .titulo {
+        font-size: 2rem;
+    }
+    .subtitulo {
+        font-size: 1rem;
+    }
+    .descripcion {
+        font-size: 0.9rem;
+    }
 }

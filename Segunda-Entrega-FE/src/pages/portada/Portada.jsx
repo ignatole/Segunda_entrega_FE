@@ -27,6 +27,7 @@ export default function Portada(){
       <div className="overlay">
         <h1 className="titulo">Portalverse</h1>
         <p className="subtitulo">Explorando el multiverso del desarrollo web</p>
+        <p className="descripcion">Somos un grupo de estudiantes de Tecnicatura en Desarrollo Web </p>
     </div>
     </div>
   );
