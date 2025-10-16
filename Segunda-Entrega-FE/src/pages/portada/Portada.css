@@ -59,6 +59,20 @@
     z-index: 0;
 }
 
+*[letter-animation="breath"] > span {
+    display: inline-block;
+    white-space: break-spaces;
+    animation: breath calc(var(--speed, 1200ms)) ease
+        calc(var(--index) * 100ms) infinite alternate; 
+}
+
+@keyframes breath {
+    from { transform: scale(1);
+    } 
+    to { transform: scale(1.25) translateY(-5px);
+    text-shadow: 0 0 20px #00ffcc;}
+}
+
 @media (max-width: 768px) {
     .portada {
         left: 0;
