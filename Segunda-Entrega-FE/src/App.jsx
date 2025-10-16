@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Portada from './pages/portada/Portada';
 import Bitacora from './pages/Bitacora';
-import Integrantes from './pages/Integrantes';
+import Integrantes from './pages/integrantes/Integrantes';
 import SideBar from './components/SideBar';
 
 
