@@ -10,9 +10,9 @@ export default function SideBar()  {
 
       {/* Menú de navegación */}
       <nav className="sidebar-nav">
-        <a href="/">Portada</a>
-        <a href="/bitacora">Bitácora</a>
-        <a href="/integrantes">Integrantes</a>
+        <a href="/" className="sidebar-link">Portada</a>
+        <a href="/bitacora" className="sidebar-link">Bitácora</a>
+        <a href="/integrantes" className="sidebar-link">Integrantes</a>
       </nav>
     </div>
   );

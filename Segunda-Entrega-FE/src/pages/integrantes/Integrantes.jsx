@@ -54,7 +54,7 @@ export default function Integrantes() {
                 {favoritos.map((item, i) =>(
                   <li key={i} >
                     <strong>{item.titulo} </strong> <br />
-                    <em>{item.director}</em>
+                    <em>{item.artista}</em>
                   </li>
                 ))}
               </ul>
