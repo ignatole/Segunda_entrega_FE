@@ -1,117 +1,129 @@
 .integrantes-container {
-    padding: 2rem;
-    text-align: center;
+  padding: 1.5rem;
+  text-align: center;
+  
 }
 
 .integrantes-container h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #00ffff;
-    text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
 }
 
 .cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
-    perspective: 1000px; /* para el flip*/
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  perspective: 1000px; /* para el flip*/
+  
 }
 
 .card {
-    position: relative;
+  /* 
+  position: relative;
     width: 220px;
     height: 320px;
     border-radius: 15px;
     color: #fff;
     cursor: pointer;
-    transform-style: preserve-3d; /* para el flip*/
-    transition: transform 0.8s ease;
+    transform-style: preserve-3d; 
+    transition: transform 0.8s ease;*/
+   width: 260px; /* Más ancho */
+  height: 360px; /* Más alto */
+  flex-shrink: 0;
+  position: relative;
+  background: rgba(10, 10, 15, 0.85);
+  border: 2px solid transparent;
+  border-radius: 15px;
+  overflow: hidden;
+  padding: 1.5rem;
+  color: #fff;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.15),
+    inset 0 0 10px rgba(0, 255, 255, 0.5);
 }
 
-
-
 .card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 0.8s ease;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
 }
 
 .card.flipped .card-inner {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
-.card-front, .card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
 }
 
-.card-front{
-    width: 100%;
-    border-radius: 10px;
+.card-front {
+  width: 100%;
+  border-radius: 10px;
 }
-
 
 .card-front h2 {
-    margin-bottom: 0.2rem;
+  margin-bottom: 0.2rem;
 }
 
 .card-front p {
-    margin-top: 0.2rem;
+  margin-top: 0.2rem;
 }
 
 .card-back {
-    background: rgba(15, 10, 25, 0.95);
-    transform: rotateY(180deg);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 1rem;
-    box-sizing: border-box;
-    overflow: hidden;
+  background: rgba(15, 10, 25, 0.95);
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1rem;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .card-back p {
-    margin: 0.3rem 0;
-    font-size: 0.9rem;
-    line-height: 1.2rem;
+  margin: 0.3rem 0;
+  font-size: 0.9rem;
+  line-height: 1.2rem;
 }
 
-
 .card-front img {
-    width: 90%;
-    border-radius: 10px;
-    margin-top: 1rem;
+  width: 90%;
+  border-radius: 10px;
+  margin-top: 1rem;
 }
 
 .card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 2px;
-    background: linear-gradient(130deg, #00ffff, #ff00ff, #00ffcc, #00ffff);
-    background-size: 400% 400%;
-    animation: neonFlow 3s linear infinite;
-    z-index: 0;
-    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
-    filter: drop-shadow(0 0 5px #0ff);
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(130deg, #00ffff, #ff00ff, #00ffcc, #00ffff);
+  background-size: 400% 400%;
+  animation: neonFlow 3s linear infinite;
+  z-index: 0;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  /*filter: drop-shadow(0 0 5px #0ff);*/
 }
 
-
 .card::after {
-    content: "";
+  /*content: "";
     position: absolute;
     inset: 0;
     background: linear-gradient(
@@ -128,26 +140,42 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.2s ease;
-    z-index: 2;
+    z-index: 2;*/
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  transition: all 0.4s ease;
+  opacity: 0;
 }
 
 .card:hover {
   transform: translateY(-4px) scale(1.05);
-  box-shadow:
-    0 0 50px rgba(255, 0, 255, 0.8),
-    0 0 80px rgba(0, 255, 255, 0.7),
+  box-shadow: 0 0 50px rgba(255, 0, 255, 0.8), 0 0 80px rgba(0, 255, 255, 0.7),
     inset 0 0 25px rgba(0, 255, 255, 0.4);
 }
 
 .card:hover::after {
-    opacity: 1;
-    animation: holoLaser 1.5s linear infinite;
+  opacity: 1;
+  animation: laserSweep 1.2s linear infinite;
+  /*animation: holoLaser 1.5s linear infinite;
+    border-radius: 15px;*/
 }
 
 .card:hover::before {
-    animation: neonPulse 1s ease-in-out infinite alternate;
+  animation: neonPulse 1s ease-in-out infinite alternate;
 }
 
+/* Este es de colores
 @keyframes holoLaser {
     0% {
         background-position: -200% 0;
@@ -155,49 +183,68 @@
     100% {
         background-position: 200% 0;
     }
+}*/
+
+@keyframes laserSweep {
+  0% {
+    left: -75%;
+  }
+  50% {
+    left: 125%;
+  }
+  100% {
+    left: 125%;
+  }
 }
 
-
 @keyframes neonFlow {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
 }
 
 @keyframes neonPulse {
-    from {
-        filter: drop-shadow(0 0 5px #0ff)
-        drop-shadow(0 0 20px #f0f)
-        brightness(1);
-    
-        
-    }
-    to {
-        filter: drop-shadow(0 0 25px #0ff)
-        drop-shadow(0 0 45px #f0f)
-        brightness(1.3);
-    }
+  from {
+    filter: drop-shadow(0 0 5px #0ff) drop-shadow(0 0 20px #f0f) brightness(1);
+  }
+  to {
+    filter: drop-shadow(0 0 25px #0ff) drop-shadow(0 0 45px #f0f)
+      brightness(1.3);
+  }
+}
+
+/* Media Queries actualizadas para 5 cards */
+/* Media Queries actualizadas */
+@media (max-width: 1200px) {
+  .card {
+    width: 240px;
+    height: 340px;
+  }
+}
+
+@media (max-width: 900px) {
+  .card {
+    width: 220px;
+    height: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 45%;
+    height: 300px;
+  }
 }
 
 @media (max-width: 600px) {
-    .integrantes-container {
-        margin-left: 0;
-        width: 100%;
-        padding: 1rem;
-    }
-
-    .cards-container {
-        justify-content: center;
-    }
-
-    .card {
-        width: 90%;
-        height: 300px;
-    }
+  .card {
+    width: 90%;
+    height: 320px;
+  }
 }

@@ -42,6 +42,7 @@ export default function Portada(){
   }, []);
 
   return (
+    <div className="portada-wrapper">
     <div className="portada"
     style={{backgroundImage: `url(${fondos[index]})`}}>
       <div className="overlay">
@@ -50,7 +51,7 @@ export default function Portada(){
         <p className="descripcion">Bienvenidos a un viaje interdimensional por los mundos del diseño, la programación
           y la creatividad infinita. </p>
     </div>
-    </div>
+    </div></div>
   );
 }
 

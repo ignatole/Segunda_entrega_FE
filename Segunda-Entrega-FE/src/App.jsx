@@ -4,7 +4,7 @@ import Portada from './pages/portada/Portada';
 import Bitacora from './pages/Bitacora';
 import Integrantes from './pages/integrantes/Integrantes';
 import SideBar from './components/SideBar';
-
+import Footer from './components/Footer';
 
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
     <Router>
       <div style={{display: 'flex'}}>
         <SideBar/>
-        <div style={{marginLeft: '220px', padding: '2rem', width: '100%'}}>
+        <div style={{marginLeft: '140px', padding: '2rem', width: '100%'}}>
           <Routes>
             <Route path="/" element={<Portada />} />
             <Route path="/bitacora" element={<Bitacora />} />
@@ -21,7 +21,10 @@ function App() {
           </Routes>
         </div>
       </div>
+
+      <Footer />
     </Router>
+
       
   );
 }

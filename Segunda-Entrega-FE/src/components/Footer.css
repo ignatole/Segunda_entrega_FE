@@ -1,0 +1,16 @@
+.footer {
+    padding: 20px;
+    background: #0a0f0e;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 -5px 15px rgba(0, 255, 204, 0.5);
+}
+
+.footer a {
+    color: #00ffcc;
+    margin: 0 10px;
+    text-decoration: none;
+    text-shadow: 1px 1px #0099ff;
+    transition: all 0.2s ease;
+}
+
