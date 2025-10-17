@@ -1,10 +1,11 @@
 import React from 'react';
 import data from '../data/data.json';
 import Card from '../components/Card';
+import './JSONData.css';
 
 const JSONData = () => {
   return (
-    <div>
+    <div className="json-data-container">
       <h1>Datos desde Archivo JSON</h1>
       <div className="api-cards">
         {data.map((item, index) => (

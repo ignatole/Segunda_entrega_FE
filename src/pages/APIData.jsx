@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import useFetch from '../hooks/useFetch';
 import Card from '../components/Card';
 import { translateStatus, translateGender, translateSpecies } from '../utils/translate';
+import './APIData.css';
 
 const APIData = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -33,15 +34,14 @@ const APIData = () => {
   );
 
   return (
-    <div>
+    <div className="api-data-container">
       <h1>Datos desde API Rick and Morty</h1>
-      <form onSubmit={handleSearch} style={{ margin: '1rem 0' }}>
+      <form onSubmit={handleSearch}>
         <input
           type="text"
           placeholder="Buscar personaje por nombre"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          style={{ padding: '0.5rem', marginRight: '0.5rem' }}
         />
         <button type="submit">Buscar</button>
       </form>

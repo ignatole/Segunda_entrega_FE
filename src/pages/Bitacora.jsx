@@ -1,8 +1,9 @@
 import React from 'react';
+import './Bitacora.css';
 
 const Bitacora = () => {
   return (
-    <div>
+    <div className="bitacora">
       <h1>Bitácora del Proyecto</h1>
       <h2>Decisiones de Diseño</h2>
       <p>Se decidió usar React con Vite para un desarrollo rápido y moderno. El diseño es responsivo con un sidebar fijo para navegación.</p>
