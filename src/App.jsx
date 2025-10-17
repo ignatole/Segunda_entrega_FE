@@ -1,31 +1,47 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Portada from './pages/portada/Portada';
 import Bitacora from './pages/Bitacora';
 import Integrantes from './pages/integrantes/Integrantes';
-import SideBar from './components/SideBar';
+import APIData from './pages/APIData';
+import JSONData from './pages/JSONData';
+import Sidebar from './components/Sidebar';
 import Footer from './components/Footer';
+import Portal from './components/Portal';
 
+function AppContent() {
+  const [portalOpen, setPortalOpen] = useState(false);
+  const location = useLocation();
 
-function App() {
+  useEffect(() => {
+    setPortalOpen(true);
+    const timer = setTimeout(() => setPortalOpen(false), 1500); // Portal dura 1.5 segundos
+    return () => clearTimeout(timer);
+  }, [location]);
 
   return (
-    <Router>
-      <div style={{display: 'flex'}}>
-        <SideBar/>
-        <div style={{marginLeft: '140px', padding: '2rem', width: '100%'}}>
-          <Routes>
-            <Route path="/" element={<Portada />} />
-            <Route path="/bitacora" element={<Bitacora />} />
-            <Route path="/integrantes" element={<Integrantes />} />
-          </Routes>
-        </div>
+    <div style={{display: 'flex'}}>
+      <Sidebar/>
+      <div style={{marginLeft: '140px', padding: '2rem', width: '100%'}}>
+        <Routes>
+          <Route path="/" element={<Portada />} />
+          <Route path="/bitacora" element={<Bitacora />} />
+          <Route path="/integrantes" element={<Integrantes />} />
+          <Route path="/json-data" element={<JSONData />} />
+          <Route path="/api-data" element={<APIData />} />
+        </Routes>
       </div>
+      <Portal open={portalOpen} duration={1500} />
+    </div>
+  );
+}
 
+function App() {
+  return (
+    <Router>
+      <AppContent />
       <Footer />
     </Router>
-
-      
   );
 }
 
