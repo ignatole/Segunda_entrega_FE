@@ -10,9 +10,11 @@ export default function SideBar()  {
 
       {/* Menú de navegación */}
       <nav className="sidebar-nav">
-        <a href="/" className="sidebar-link">Portada</a>
-        <a href="/bitacora" className="sidebar-link">Bitácora</a>
-        <a href="/integrantes" className="sidebar-link">Integrantes</a>
+        <Link to="/" className="sidebar-link">Portada</Link>
+        <Link to="/bitacora" className="sidebar-link">Bitácora</Link>
+        <Link to="/integrantes" className="sidebar-link">Integrantes</Link>
+        <Link to="/json-data" className="sidebar-link">JSON Data</Link>
+        <Link to="/api-data" className="sidebar-link">API Data</Link>
       </nav>
     </div>
   );
