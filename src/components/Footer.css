@@ -5,6 +5,8 @@
     color: #fff;
     box-shadow: 0 -5px 15px rgba(0, 255, 204, 0.5);
     margin-top: auto;
+    margin-left: 140px; /* Ajusta para el sidebar */
+    width: calc(100% - 140px); /* Ocupa todo el ancho menos el sidebar */
 }
 
 .footer a {

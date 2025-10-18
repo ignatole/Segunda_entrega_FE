@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import '../../styles/Integrantes.css';
-import data from '../../data/data.json';
+import '../styles/Integrantes.css';
+import data from '../data/data.json';
 
 
 export default function Integrantes() {

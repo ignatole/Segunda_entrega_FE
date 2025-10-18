@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import Portada from './pages/portada/Portada';
+import Portada from './pages/Portada';
 import Bitacora from './pages/Bitacora';
-import Integrantes from './pages/integrantes/Integrantes';
+import Integrantes from './pages/Integrantes';
 import APIData from './pages/APIData';
 import JSONData from './pages/JSONData';
 import Sidebar from './components/Sidebar';
