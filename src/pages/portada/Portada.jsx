@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import './Portada.css';
+import '../../styles/Portada.css';
 
 
 export default function Portada(){

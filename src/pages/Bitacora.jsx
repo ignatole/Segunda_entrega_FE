@@ -1,5 +1,5 @@
 import React from 'react';
-import './Bitacora.css';
+import '../styles/Bitacora.css';
 
 const Bitacora = () => {
   return (

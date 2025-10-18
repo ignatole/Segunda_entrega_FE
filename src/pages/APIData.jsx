@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import useFetch from '../hooks/useFetch';
 import Card from '../components/Card';
 import { translateStatus, translateGender, translateSpecies } from '../utils/translate';
-import './APIData.css';
+import '../styles/APIData.css';
 
 const APIData = () => {
   const [searchTerm, setSearchTerm] = useState('');

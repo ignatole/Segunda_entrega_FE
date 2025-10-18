@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import './Integrantes.css';
+import '../../styles/Integrantes.css';
 import data from '../../data/data.json';
 
 
