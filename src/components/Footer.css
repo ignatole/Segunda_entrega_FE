@@ -4,6 +4,9 @@
     text-align: center;
     color: #fff;
     box-shadow: 0 -5px 15px rgba(0, 255, 204, 0.5);
+    margin-top: auto;
+    margin-left: 140px; /* Ajusta para el sidebar */
+    width: calc(100% - 140px); /* Ocupa todo el ancho menos el sidebar */
 }
 
 .footer a {
@@ -12,5 +15,12 @@
     text-decoration: none;
     text-shadow: 1px 1px #0099ff;
     transition: all 0.2s ease;
+}
+
+/* Footer específico para páginas con contenido centrado */
+.footer.centered-content {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 

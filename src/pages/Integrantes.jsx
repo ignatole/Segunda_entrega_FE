@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import './Integrantes.css';
-import data from '../../data/data.json';
+import '../styles/Integrantes.css';
+import data from '../data/data.json';
 
 
 export default function Integrantes() {
@@ -29,40 +29,42 @@ export default function Integrantes() {
     setFlippedIndex(flippedIndex === index ? null : index);
   };
   return (
-    <div className="integrantes-container">
-      <h1>Nuestro equipo</h1>
-      <div className="cards-container">
-        
-        {personajes.map((p, index) => {
-          const nombre = integrantes[index];
-          const favoritos = data.filter(f => f.integrante === nombre);
-        
-        return (
-          <div key={p.id} 
-          className={`card ${flippedIndex === index ? 'flipped': ''}`}
-          onClick={() => handleFlip(index)}
-          >
-            <div className="card-inner">
-              <div className="card-front">
-                <img src={p.image} alt={p.name} />
-                <h2>{p.name}</h2>
-                <p>{roles[index]}</p>
-            </div>
-            <div className="card-back">
-              <h3>Favoritos</h3>
-              <ul>
-                {favoritos.map((item, i) =>(
-                  <li key={i} >
-                    <strong>{item.titulo} </strong> <br />
-                    <em>{item.artista}</em>
-                  </li>
-                ))}
-              </ul>
+    <div className="integrantes-page-container">
+      <div className="integrantes-container">
+        <h1>Nuestro equipo</h1>
+        <div className="cards-container">
+          
+          {personajes.map((p, index) => {
+            const nombre = integrantes[index];
+            const favoritos = data.filter(f => f.integrante === nombre);
+          
+          return (
+            <div key={p.id} 
+            className={`card ${flippedIndex === index ? 'flipped': ''}`}
+            onClick={() => handleFlip(index)}
+            >
+              <div className="card-inner">
+                <div className="card-front">
+                  <img src={p.image} alt={p.name} />
+                  <h2>{p.name}</h2>
+                  <p>{roles[index]}</p>
+              </div>
+              <div className="card-back">
+                <h3>Favoritos</h3>
+                <ul>
+                  {favoritos.map((item, i) =>(
+                    <li key={i} >
+                      <strong>{item.titulo} </strong> <br />
+                      <em>{item.artista}</em>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
+          );
+          })}
         </div>
-        );
-        })}
       </div>
     </div>
   );

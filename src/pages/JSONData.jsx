@@ -1,7 +1,7 @@
 import React from 'react';
 import data from '../data/data.json';
 import Card from '../components/Card';
-import './JSONData.css';
+import '../styles/JSONData.css';
 
 const JSONData = () => {
   return (
