@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import Portada from './pages/Portada';
+import React, { useState, useEffect, useRef } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import Portada from './pages/portada/Portada';
 import Bitacora from './pages/Bitacora';
 import Integrantes from './pages/Integrantes';
 import APIData from './pages/APIData';
@@ -10,19 +10,63 @@ import Footer from './components/Footer';
 import Portal from './components/Portal';
 
 function AppContent() {
-  const [portalOpen, setPortalOpen] = useState(false);
+  const [portalVisible, setPortalVisible] = useState(false);
+  const [portalDuration, setPortalDuration] = useState(1500);
+  const [portalPhase, setPortalPhase] = useState('idle'); // 'idle' | 'in' | 'out'
+  const [targetPath, setTargetPath] = useState(null);
   const location = useLocation();
+  const navigate = useNavigate();
+  const contentRef = useRef(null);
+
+  const IN_DURATION = 700; // ms
+  const OUT_DURATION = 800; // ms
 
   useEffect(() => {
-    setPortalOpen(true);
-    const timer = setTimeout(() => setPortalOpen(false), 1500); // Portal dura 1.5 segundos
-    return () => clearTimeout(timer);
-  }, [location]);
+    // ensure we reset classes on route change if needed
+    if (contentRef.current) {
+      contentRef.current.classList.remove('absorbed', 'from-portal');
+    }
+  }, [location.pathname]);
+
+  const startPortalNavigation = (path) => {
+    if (!path || path === location.pathname) return;
+    if (portalPhase !== 'idle') return; // ignore while animating
+
+    setPortalPhase('in');
+    setPortalVisible(true);
+    setPortalDuration(IN_DURATION + OUT_DURATION);
+    // apply absorbed class to content for scale/blur effect
+    if (contentRef.current) {
+      contentRef.current.classList.add('absorbed');
+      contentRef.current.classList.remove('from-portal');
+    }
+
+    // After IN_DURATION, perform the navigation
+    setTimeout(() => {
+      navigate(path);
+      setPortalPhase('out');
+      // swap classes so content transitions as if coming from portal
+      if (contentRef.current) {
+        contentRef.current.classList.remove('absorbed');
+        contentRef.current.classList.add('from-portal');
+      }
+    }, IN_DURATION);
+
+    // After full duration, hide portal and reset phase
+    setTimeout(() => {
+      setPortalVisible(false);
+      setPortalPhase('idle');
+      setTargetPath(null);
+      if (contentRef.current) {
+        contentRef.current.classList.remove('absorbed', 'from-portal');
+      }
+    }, IN_DURATION + OUT_DURATION + 50);
+  };
 
   return (
-    <div style={{display: 'flex', flex: 1}}>
-      <Sidebar/>
-      <div style={{marginLeft: '140px', padding: '2rem', width: '100%', flex: 1}}>
+    <div style={{display: 'flex'}}>
+      <Sidebar onNavigate={startPortalNavigation} />
+      <div ref={contentRef} className="app-content" style={{marginLeft: '140px', padding: '2rem', width: '100%'}}>
         <Routes>
           <Route path="/" element={<Portada />} />
           <Route path="/bitacora" element={<Bitacora />} />
@@ -31,7 +75,7 @@ function AppContent() {
           <Route path="/api-data" element={<APIData />} />
         </Routes>
       </div>
-      <Portal open={portalOpen} duration={1500} />
+      <Portal open={portalVisible} duration={portalDuration} />
     </div>
   );
 }
