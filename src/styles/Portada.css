@@ -13,6 +13,12 @@
   overflow: hidden;
 }
 
+/* Background images for portada (migrated from inline styles) */
+.portada.bg-0 { background-image: url('/assets/pic_1.jpg'); }
+.portada.bg-1 { background-image: url('/assets/pic_2.png'); }
+.portada.bg-2 { background-image: url('/assets/pic_3.jpg'); }
+.portada.bg-3 { background-image: url('/assets/pic_4.jpg'); }
+
 .portada .overlay
 {
     position: relative;

@@ -12,10 +12,8 @@ export default function SideBar({ onNavigate })  {
 
     return (
         <div className="sidebar">
-         {/* Título o logo del grupo */}
       <div className="sidebar-title">Grupo 6</div>
 
-      {/* Menú de navegación */}
       <nav className="sidebar-nav">
         <a href="/" onClick={(e) => handleClick(e, '/')} className="sidebar-link">Portada</a>
         <a href="/bitacora" onClick={(e) => handleClick(e, '/bitacora')} className="sidebar-link">Bitácora</a>

@@ -25,7 +25,7 @@ const APIData = () => {
 
   const renderCard = (item) => (
     <Card key={item.id}>
-      <img src={item.image} alt={item.name} style={{ width: '100%', borderRadius: '8px 8px 0 0' }} />
+      <img className="card-image" src={item.image} alt={item.name} />
       <h3>{item.name}</h3>
   <p>Estado: {translateStatus(item.status)}</p>
   <p>Especie: {translateSpecies(item.species)}</p>
