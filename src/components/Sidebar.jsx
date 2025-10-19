@@ -5,10 +5,8 @@ import './SideBar.css'
 export default function SideBar()  {
     return (
         <div className="sidebar">
-         {/* Título o logo del grupo */}
       <div className="sidebar-title">Grupo 6</div>
 
-      {/* Menú de navegación */}
       <nav className="sidebar-nav">
         <Link to="/" className="sidebar-link">Portada</Link>
         <Link to="/bitacora" className="sidebar-link">Bitácora</Link>
