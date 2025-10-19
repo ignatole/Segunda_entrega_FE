@@ -13,17 +13,15 @@ export default function Portada(){
   const [index, setIndex] = useState(0);
   const titleRef = useRef(null);
   
-  // fondos 
   useEffect(() => {
     const intervalo = setInterval(() => {
       setIndex((prev) => (prev + 1) % fondos.length);
 
-    }, 5000); // Cambia cada 5 segundos
+  }, 5000);
 
     return () => clearInterval(intervalo);
-  }, []);
+  }, [fondos.length]);
 
-  // animacion titulo
   useEffect(() => {
     const node = titleRef.current;
     if(!node) return;

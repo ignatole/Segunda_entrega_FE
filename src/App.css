@@ -10,11 +10,19 @@
 }
 
 .app-content {
-  margin-left: 160px; /* Ancho inicial de la sidebar */
+  margin-left: 160px;
   padding: 2rem;
   width: 100%;
   flex: 1;
-  transition: margin-left 0.3s ease; /* Transición suave */
+  transition: margin-left 0.3s ease;
+}
+
+:root {
+  --sidebar-width: 160px;
+}
+
+.app-content.no-padding {
+  padding: 0;
 }
 
 body {
@@ -165,15 +173,14 @@ button:hover {
 }
 
 
-/* Media Queries para ajustar el margen del contenido */
 @media (max-width: 768px) {
   .app-content {
-    margin-left: 60px; /* Ancho de la sidebar en tablets */
+    margin-left: 60px;
   }
 }
 
 @media (max-width: 600px) {
   .app-content {
-    margin-left: 50px; /* Ancho de la sidebar en móviles */
+    margin-left: 50px;
   }
 }

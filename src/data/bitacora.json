@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "date": "2025-10-11",
+    "author": "Romina",
+    "title": "Decisiones de Diseño",
+    "body": "Se decidió usar React con Vite para un desarrollo rápido y moderno. El diseño es responsivo con un sidebar fijo para navegación.",
+    "tags": ["Diseño", "Arquitectura"]
+  },
+  {
+    "id": 2,
+    "date": "2025-10-13",
+    "author": "Laura",
+    "title": "Integración API",
+    "body": "Se integró la API de Rick and Morty. Se crearon hooks personalizados para manejo de estados y errores.",
+    "tags": ["API", "Backend"]
+  },
+  {
+    "id": 3,
+    "date": "2025-10-14",
+    "author": "Iván",
+    "title": "Reorganización de archivos",
+    "body": "Se reestructuró el proyecto para agrupar componentes y estilos por función, facilitando el mantenimiento. Se reestructuraron la ubicación de los archivos, tanto CSS como JSX.",
+    "tags": ["Estructura"]
+  },
+  {
+    "id": 4,
+    "date": "2025-10-15",
+    "author": "Ignacio",
+    "title": "Portal animado",
+    "body": "Se añadió un portal animado con imagen y sonido para transiciones entre páginas.",
+    "tags": ["UI", "Animación"]
+  },
+  {
+    "id": 5,
+    "date": "2025-10-16",
+    "author": "Gonzalo",
+    "title": "Footer",
+    "body": "Se trabajó en corregir y ajustar el footer para que ocupe todo el ancho en distintas pantallas, además de acomodar CSS.",
+    "tags": ["UI", "Footer"]
+  },
+  {
+    "id": 6,
+    "date": "2025-10-17",
+    "author": "Equipo",
+    "title": "Migración de estilos",
+    "body": "Migramos estilos inline a archivos CSS para evitar conflictos de especificidad y mejorar la organización.",
+    "tags": ["Estilos", "Refactor"]
+  },
+{
+    "id": 7,
+    "date": "2025-10-18",
+    "author": "Equipo",
+    "title": "Correcciones finas",
+    "body": "Se realizaron correcciones finas en los estilos para mejorar la coherencia visual y la experiencia del usuario. Se ajustaron links a repositorios correctos.",
+    "tags": ["Estilos", "Refactor"]
+  }
+]
