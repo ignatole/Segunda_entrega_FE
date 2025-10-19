@@ -2,7 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import './SideBar.css'
 
-export default function SideBar()  {
+export default function SideBar({ onNavigate })  {
+    const handleClick = (e, path) => {
+      e.preventDefault();
+      if (typeof onNavigate === 'function') return onNavigate(path);
+      // fallback to regular navigation when no handler is provided
+      window.location.href = path;
+    };
+
     return (
         <div className="sidebar">
          {/* Título o logo del grupo */}
@@ -10,11 +17,11 @@ export default function SideBar()  {
 
       {/* Menú de navegación */}
       <nav className="sidebar-nav">
-        <Link to="/" className="sidebar-link">Portada</Link>
-        <Link to="/bitacora" className="sidebar-link">Bitácora</Link>
-        <Link to="/integrantes" className="sidebar-link">Integrantes</Link>
-        <Link to="/json-data" className="sidebar-link">JSON Data</Link>
-        <Link to="/api-data" className="sidebar-link">API Data</Link>
+        <a href="/" onClick={(e) => handleClick(e, '/')} className="sidebar-link">Portada</a>
+        <a href="/bitacora" onClick={(e) => handleClick(e, '/bitacora')} className="sidebar-link">Bitácora</a>
+        <a href="/integrantes" onClick={(e) => handleClick(e, '/integrantes')} className="sidebar-link">Integrantes</a>
+        <a href="/json-data" onClick={(e) => handleClick(e, '/json-data')} className="sidebar-link">JSON Data</a>
+        <a href="/api-data" onClick={(e) => handleClick(e, '/api-data')} className="sidebar-link">API Data</a>
       </nav>
     </div>
   );
