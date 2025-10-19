@@ -5,9 +5,9 @@ import './SideBar.css'
 export default function SideBar({ onNavigate })  {
     const handleClick = (e, path) => {
       e.preventDefault();
-      if (typeof onNavigate === 'function') return onNavigate(path);
-      // fallback to regular navigation when no handler is provided
-      window.location.href = path;
+  // Intentamos usar la navegación controlada si nos la pasan; si no, hacemos fallback al navegador
+  if (typeof onNavigate === 'function') return onNavigate(path);
+  window.location.href = path;
     };
 
     return (

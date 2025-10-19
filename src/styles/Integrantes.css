@@ -154,15 +154,14 @@
   animation: neonPulse 1s ease-in-out infinite alternate;
 }
 
-/* Este es de colores
 @keyframes holoLaser {
-    0% {
-        background-position: -200% 0;
-    }
-    100% {
-        background-position: 200% 0;
-    }
-}*/
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
 
 @keyframes laserSweep {
   0% {

@@ -8,7 +8,9 @@ const Portal = ({ open = false, duration = 1500 }) => {
     let synthCtx;
     let stopTimer;
 
-    const playFallbackSynth = () => {
+  // Intento reproducir un mp3; si el navegador bloquea reproducción automática
+  // usamos un sintetizador de WebAudio como fallback para no romper la UX.
+  const playFallbackSynth = () => {
       try {
         synthCtx = new (window.AudioContext || window.webkitAudioContext)();
         const o = synthCtx.createOscillator();
@@ -23,40 +25,35 @@ const Portal = ({ open = false, duration = 1500 }) => {
         g.gain.exponentialRampToValueAtTime(0.0001, synthCtx.currentTime + duration / 1000);
 
         stopTimer = setTimeout(() => {
-          try { o.stop(); } catch (e) {}
-          try { synthCtx.close(); } catch (e) {}
+          try { o.stop(); } catch { void 0; }
+          try { synthCtx.close(); } catch { void 0; }
         }, duration + 50);
-      } catch (err) {
-        // ignore
-      }
+      } catch { void 0; }
     };
 
-    // Prefer playing an audio file if present
     try {
       audio = new Audio('/assets/portal-sound.mp3');
       audio.volume = 0.25;
       const playPromise = audio.play();
       if (playPromise && typeof playPromise.then === 'function') {
         playPromise.catch(() => {
-          // Autoplay blocked — fallback to synth
           playFallbackSynth();
         });
       }
-      // ensure it stops after duration
+      
       stopTimer = setTimeout(() => {
-        try { audio.pause(); audio.currentTime = 0; } catch (e) {}
+        try { audio.pause(); audio.currentTime = 0; } catch { void 0; }
       }, duration + 100);
-    } catch (err) {
-      // If any error, fallback to synth
+    } catch {
       playFallbackSynth();
     }
 
     return () => {
       try {
         if (audio) { audio.pause(); audio.currentTime = 0; }
-      } catch (e) {}
-      try { clearTimeout(stopTimer); } catch (e) {}
-      try { if (synthCtx) synthCtx.close(); } catch (e) {}
+      } catch { void 0; }
+      try { clearTimeout(stopTimer); } catch { void 0; }
+      try { if (synthCtx) synthCtx.close(); } catch { void 0; }
     };
   }, [open, duration]);
 

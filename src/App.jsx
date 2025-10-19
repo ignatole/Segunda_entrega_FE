@@ -13,47 +13,48 @@ import './styles/App.css';
 function AppContent() {
   const [portalVisible, setPortalVisible] = useState(false);
   const [portalDuration, setPortalDuration] = useState(1500);
-  const [portalPhase, setPortalPhase] = useState('idle'); // 'idle' | 'in' | 'out'
+  const [portalPhase, setPortalPhase] = useState('idle');
   const [setTargetPath] = useState(null);
   const location = useLocation();
   const navigate = useNavigate();
   const contentRef = useRef(null);
 
-  const IN_DURATION = 700; // ms
-  const OUT_DURATION = 800; // ms
+  const IN_DURATION = 700;
+  const OUT_DURATION = 800;
+
+  // Nota: IN/OUT_DURATION controlan la animación del portal; ajustar si añadimos más fases
 
   useEffect(() => {
-    // ensure we reset classes on route change if needed
     if (contentRef.current) {
       contentRef.current.classList.remove('absorbed', 'from-portal');
     }
   }, [location.pathname]);
 
   const startPortalNavigation = (path) => {
-    if (!path || path === location.pathname) return;
-    if (portalPhase !== 'idle') return; // ignore while animating
+  if (!path || path === location.pathname) return;
+  if (portalPhase !== 'idle') return;
 
-    setPortalPhase('in');
+  // iniciamos la animación de entrada
+  setPortalPhase('in');
     setPortalVisible(true);
     setPortalDuration(IN_DURATION + OUT_DURATION);
-    // apply absorbed class to content for scale/blur effect
     if (contentRef.current) {
       contentRef.current.classList.add('absorbed');
       contentRef.current.classList.remove('from-portal');
     }
 
-    // After IN_DURATION, perform the navigation
+    
     setTimeout(() => {
       navigate(path);
       setPortalPhase('out');
-      // swap classes so content transitions as if coming from portal
+      
       if (contentRef.current) {
         contentRef.current.classList.remove('absorbed');
         contentRef.current.classList.add('from-portal');
       }
     }, IN_DURATION);
 
-    // After full duration, hide portal and reset phase
+    
     setTimeout(() => {
       setPortalVisible(false);
       setPortalPhase('idle');
