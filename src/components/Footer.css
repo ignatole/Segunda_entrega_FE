@@ -17,3 +17,10 @@
     transition: all 0.2s ease;
 }
 
+/* Footer específico para páginas con contenido centrado */
+.footer.centered-content {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
