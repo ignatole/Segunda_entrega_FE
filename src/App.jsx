@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
-import Portada from './pages/portada/Portada';
+import Portada from './pages/Portada';
 import Bitacora from './pages/Bitacora';
 import Integrantes from './pages/Integrantes';
 import APIData from './pages/APIData';
@@ -8,12 +8,13 @@ import JSONData from './pages/JSONData';
 import Sidebar from './components/Sidebar';
 import Footer from './components/Footer';
 import Portal from './components/Portal';
+import './styles/App.css';
 
 function AppContent() {
   const [portalVisible, setPortalVisible] = useState(false);
   const [portalDuration, setPortalDuration] = useState(1500);
   const [portalPhase, setPortalPhase] = useState('idle'); // 'idle' | 'in' | 'out'
-  const [targetPath, setTargetPath] = useState(null);
+  const [setTargetPath] = useState(null);
   const location = useLocation();
   const navigate = useNavigate();
   const contentRef = useRef(null);
@@ -64,9 +65,9 @@ function AppContent() {
   };
 
   return (
-    <div style={{display: 'flex'}}>
+    <div className="app-container">
       <Sidebar onNavigate={startPortalNavigation} />
-      <div ref={contentRef} className="app-content" style={{marginLeft: '140px', padding: '2rem', width: '100%'}}>
+      <main ref={contentRef} className="app-content">
         <Routes>
           <Route path="/" element={<Portada />} />
           <Route path="/bitacora" element={<Bitacora />} />
@@ -74,7 +75,7 @@ function AppContent() {
           <Route path="/json-data" element={<JSONData />} />
           <Route path="/api-data" element={<APIData />} />
         </Routes>
-      </div>
+      </main>
       <Portal open={portalVisible} duration={portalDuration} />
     </div>
   );
@@ -83,7 +84,7 @@ function AppContent() {
 function App() {
   return (
     <Router>
-      <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+      <div className="app-wrapper">
         <AppContent />
         <Footer />
       </div>

@@ -43,8 +43,7 @@ export default function Portada(){
 
   return (
     <div className="portada-wrapper">
-    <div className="portada"
-    style={{backgroundImage: `url(${fondos[index]})`}}>
+    <div className={`portada bg-${index}`}>
       <div className="overlay">
         <h1 ref={titleRef} letter-animation= "breath">Portalverse</h1>
         <p className="subtitulo">Explorando el multiverso del desarrollo web</p>
