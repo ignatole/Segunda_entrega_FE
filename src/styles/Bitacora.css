@@ -1,3 +1,7 @@
+.bitacora-container {
+  width: 100%;
+}
+
 .bitacora {
   padding: 2rem;
   max-width: 800px;

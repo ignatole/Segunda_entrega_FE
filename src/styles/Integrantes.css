@@ -1,7 +1,12 @@
+.integrantes-page-container {
+  width: 100%;
+}
+
 .integrantes-container {
   padding: 1.5rem;
   text-align: center;
-  
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .integrantes-container h1 {
