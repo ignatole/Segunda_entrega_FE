@@ -8,7 +8,9 @@ const Portal = ({ open = false, duration = 1500 }) => {
     let synthCtx;
     let stopTimer;
 
-    const playFallbackSynth = () => {
+  // Intento reproducir un mp3; si el navegador bloquea reproducción automática
+  // usamos un sintetizador de WebAudio como fallback para no romper la UX.
+  const playFallbackSynth = () => {
       try {
         synthCtx = new (window.AudioContext || window.webkitAudioContext)();
         const o = synthCtx.createOscillator();
@@ -42,7 +44,7 @@ const Portal = ({ open = false, duration = 1500 }) => {
       stopTimer = setTimeout(() => {
         try { audio.pause(); audio.currentTime = 0; } catch { void 0; }
       }, duration + 100);
-    } catch (_) {
+    } catch {
       playFallbackSynth();
     }
 

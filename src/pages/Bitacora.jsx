@@ -2,6 +2,8 @@ import React, { useMemo, useState } from 'react';
 import '../styles/Bitacora.css';
 import data from '../data/bitacora.json';
 
+// Nota: los datos vienen de `src/data/bitacora.json`. Si se necesita añadir entradas, actualizar ese archivo.
+// El buscador es sencillo y busca en título, cuerpo y autor.
 const Bitacora = () => {
   const [search, setSearch] = useState('');
   const [tag, setTag] = useState('');

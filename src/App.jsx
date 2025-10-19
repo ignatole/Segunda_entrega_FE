@@ -22,6 +22,8 @@ function AppContent() {
   const IN_DURATION = 700;
   const OUT_DURATION = 800;
 
+  // Nota: IN/OUT_DURATION controlan la animación del portal; ajustar si añadimos más fases
+
   useEffect(() => {
     if (contentRef.current) {
       contentRef.current.classList.remove('absorbed', 'from-portal');
@@ -32,7 +34,8 @@ function AppContent() {
   if (!path || path === location.pathname) return;
   if (portalPhase !== 'idle') return;
 
-    setPortalPhase('in');
+  // iniciamos la animación de entrada
+  setPortalPhase('in');
     setPortalVisible(true);
     setPortalDuration(IN_DURATION + OUT_DURATION);
     if (contentRef.current) {
