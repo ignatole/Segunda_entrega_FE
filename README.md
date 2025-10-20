@@ -13,6 +13,12 @@ Características principales
 - Consumo de API Rick and Morty (buscador por nombre) y traducción de campos relevantes al español.
 - Datos locales renderizados desde `src/data/data.json`.
 
+Arbol de Renderizado
+-----------------------
+
+![Arbol de renderizado](./public/assets/ArbolRenderizado.drawio.png)
+
+
 Estructura del proyecto
 -----------------------
 ```
