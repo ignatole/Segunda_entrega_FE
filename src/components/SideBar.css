@@ -14,6 +14,7 @@
     
     filter: drop-shadow(0 0 10px #00ffcc);
     animation: glow 2s infinite;
+    transition: width 0.35s;
     }
 
 .sidebar-title {
@@ -38,6 +39,7 @@
   box-sizing: border-box;
 }
 
+
 .sidebar-link { display: flex; align-items: center; gap: 10px; }
 .sidebar-link .icon { width: 28px; text-align: center; font-size: 1.05rem; }
 .sidebar-link .label { white-space: nowrap; }
@@ -46,6 +48,7 @@
     color: #13ae8f;
     transform: scale(1.1);
 }
+
 
 .sidebar-link {
   display: inline-block;
@@ -86,12 +89,28 @@
   :root{ --sidebar-width: 60px; }
   .sidebar { width: var(--sidebar-mobile-width); }
   .sidebar-title { font-size: 0.9rem; }
+  .sidebar-link .label { display: none; }
 }
 
 @media (max-width: 600px) {
   :root{ --sidebar-width: 50px; }
-  .sidebar { width: 50px; }
-  .sidebar-nav a { font-size: 0.8rem; margin: 8px 0; }
+  .sidebar {
+    width: var(--sidebar-collapsed-width, 90px) !important;
+  }
+  .sidebar-title,
+  .sidebar-nav a {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    font-size: 0.8rem;
+  }
+  .sidebar-link .label {
+    display: none;
+  }
+  .sidebar-title {
+    font-size: 0.95rem;
+  }
 }
 
 /* Collapsed state */
@@ -143,3 +162,5 @@ body.sidebar-collapsed .sidebar-title,
   0%, 100% { box-shadow: 0 0 10px #00ffcc; }
   50% { box-shadow: 0 0 20px #00ffcc; }
 }
+
+

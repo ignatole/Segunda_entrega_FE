@@ -5,8 +5,9 @@
     color: #fff;
     box-shadow: 0 -5px 15px rgba(0, 255, 204, 0.5);
     margin-top: auto;
-    margin-left: 140px;
-    width: calc(100vw - 140px);
+    margin-left: var(--sidebar-width, 160px);
+    width: calc(100vw - var(--sidebar-width, 160px));
+    transition: margin-left 0.28s, width 0.28s;
 }
 
 .footer a {
@@ -23,3 +24,14 @@
     margin-right: auto;
 }
 
+body.sidebar-collapsed .footer {
+    margin-left: var(--sidebar-collapsed-width, 64px);
+    width: calc(100vw - var(--sidebar-collapsed-width, 64px));
+}
+/*--->el footer se une al sidebar cuando colpasa en responsive*/
+@media (max-width: 768px) {
+  .footer {
+    margin-left: var(--sidebar-collapsed-width, 64px);
+    width: calc(100vw - var(--sidebar-collapsed-width, 64px));
+  }
+}
