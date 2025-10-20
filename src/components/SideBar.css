@@ -1,9 +1,9 @@
 .sidebar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 160px;
-    height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: var(--sidebar-width, 160px);
+  height: 100vh;
     background-color: #0d0d2d;
     color: #fff;
     display: flex;
@@ -17,20 +17,30 @@
     }
 
 .sidebar-title {
-    font-size: 1.3rem;
-    margin-bottom: 2rem;
-    color: #2ed4b3;
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  color: #2ed4b3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
 }
 
 .sidebar-nav a {
-    display: block;
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    margin: 10px 0;
-    transition: 0.3s;
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 10px 0;
+  transition: 0.3s;
+  padding: 6px 10px;
+  width: 100%;
+  box-sizing: border-box;
 }
+
+.sidebar-link { display: flex; align-items: center; gap: 10px; }
+.sidebar-link .icon { width: 28px; text-align: center; font-size: 1.05rem; }
+.sidebar-link .label { white-space: nowrap; }
 
 .sidebar-nav a:hover {
     color: #13ae8f;
@@ -73,24 +83,60 @@
 }
 
 @media (max-width: 768px) {
-  .sidebar {
-    width: 60px;
-  }
-  
-  .sidebar-title {
-    font-size: 0.9rem;
-  }
+  :root{ --sidebar-width: 60px; }
+  .sidebar { width: var(--sidebar-mobile-width); }
+  .sidebar-title { font-size: 0.9rem; }
 }
 
 @media (max-width: 600px) {
-  .sidebar {
-    width: 50px;
-  }
-  
-  .sidebar-nav a {
-    font-size: 0.8rem;
-    margin: 8px 0;
-  }
+  :root{ --sidebar-width: 50px; }
+  .sidebar { width: 50px; }
+  .sidebar-nav a { font-size: 0.8rem; margin: 8px 0; }
+}
+
+/* Collapsed state */
+body.sidebar-collapsed .sidebar,
+.sidebar.collapsed {
+  width: var(--sidebar-collapsed-width, 64px);
+}
+
+body.sidebar-collapsed .sidebar-title,
+.sidebar.collapsed .sidebar-title {
+  font-size: 0.95rem;
+}
+
+/* when collapsed, hide long labels but keep accessible text via title attribute if needed */
+.sidebar.collapsed .sidebar-title,
+.sidebar.collapsed .sidebar-nav a {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* hide labels when collapsed for a clean compact bar */
+.sidebar.collapsed .label { display: none; }
+.sidebar.collapsed .icon { font-size: 1.2rem; }
+
+/* ensure collapsed mobile doesn't conflict with responsive small screens */
+@media (max-width: 600px) {
+  body.sidebar-collapsed .sidebar,
+  .sidebar.collapsed { width: var(--sidebar-mobile-width); }
+  body.sidebar-collapsed .app-content { margin-left: var(--sidebar-mobile-width); }
+}
+
+.sidebar-toggle {
+  margin-top: auto;
+  margin-bottom: 20px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.06);
+  color: #fff;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.sidebar-toggle:hover {
+  background: rgba(255,255,255,0.02);
 }
 
 @keyframes glow {
