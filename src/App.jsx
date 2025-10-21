@@ -5,7 +5,7 @@ import Bitacora from './pages/Bitacora';
 import Integrantes from './pages/Integrantes';
 import APIData from './pages/APIData';
 import JSONData from './pages/JSONData';
-import Sidebar from './components/Sidebar';
+import Sidebar from './components/SideBar';
 import Footer from './components/Footer';
 import Portal from './components/Portal';
 import './styles/App.css';
