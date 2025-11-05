@@ -1,5 +1,5 @@
 import React from "react";
-import "./Footer.css";
+import "../styles/Footer.css";
 
 const Footer = ({ centered = false }) => {
     const footerClass = centered ? "footer centered-content" : "footer";
