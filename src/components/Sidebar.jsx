@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import './SideBar.css'
+import '../styles/SideBar.css'
 
 export default function SideBar({ onNavigate })  {
     const [collapsed, setCollapsed] = useState(false);
