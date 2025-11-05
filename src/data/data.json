@@ -1,7 +1,7 @@
 [
     {
         "integrante": "Laura",
-        "tipo": "pelicula",
+        "tipo": "Pelicula",
         "titulo": "Fitzcarraldo",
         "año": "1982",
         "director": "Werner Herzog"
@@ -9,7 +9,7 @@
 
     {
         "integrante": "Laura",
-        "tipo": "pelicula",
+        "tipo": "Pelicula",
         "titulo": "Kitchen Stories",
         "año": 2003,
         "director": "Bent Hamer"
@@ -18,7 +18,7 @@
     {
         
         "integrante": "Ivan",
-        "tipo": "pelicula",
+        "tipo": "Pelicula",
         "titulo": "¡Cuidado! bebe suelto",
         "año": 1994,
         "director": "Patrick Read Johnson"
@@ -27,7 +27,7 @@
 
     {
         "integrante": "Ivan",
-        "tipo": "pelicula",
+        "tipo": "Pelicula",
         "titulo": "Mi pobre angelito",
         "año": 1990,
         "director": "Chris Columbus"
@@ -35,7 +35,7 @@
 
     {
         "integrante": "Romina",
-        "tipo": "pelicula",
+        "tipo": "Pelicula",
         "titulo": "Interestellar",
         "año": 2014,
         "director": "Christopher Nolan"
@@ -43,7 +43,7 @@
 
     {
         "integrante": "Romina",
-        "tipo": "pelicula",
+        "tipo": "Pelicula",
         "titulo": "Wall-E",
         "año": 2008,
         "director": "Andrew Stanton"
@@ -51,7 +51,7 @@
 
     {
         "integrante": "Ignacio",
-        "tipo": "pelicula",
+        "tipo": "Pelicula",
         "titulo": "Isla de perros",
         "año": 2018,
         "director": "Wes Anderson"
@@ -59,7 +59,7 @@
 
     {
         "integrante": "Ignacio",
-        "tipo": "pelicula",
+        "tipo": "Pelicula",
         "titulo": "Batman, El caballero de la noche", 
         "año": 2008,
         "director": "Christopher Nolan"
@@ -67,7 +67,7 @@
 
     {
         "integrante": "Gonzalo",
-        "tipo": "pelicula",
+        "tipo": "Pelicula",
         "titulo": "Diario de vampiros",
         "año": 2008,
         "director": "Julie Plec"
@@ -75,7 +75,7 @@
 
     {
         "integrante": "Gonzalo",
-        "tipo": "pelicula",
+        "tipo": "Pelicula",
         "titulo": "Rapido y Furioso",
         "año": 2001,
         "director": "Rob Cohen"
@@ -83,7 +83,7 @@
 
     {
         "integrante": "Laura",
-        "tipo": "musica",
+        "tipo": "Musica",
         "titulo": "Infame",
         "año": 2003,
         "artista": "Babasonicos"
@@ -91,7 +91,7 @@
     
     {
         "integrante": "Laura",
-        "tipo": "musica",
+        "tipo": "Musica",
         "titulo": "Mudras",
         "año": 2003,
         "artista": "Pedro Aznar"
@@ -99,7 +99,7 @@
 
     {
         "integrante": "Ivan",
-        "tipo": "musica",
+        "tipo": "Musica",
         "titulo": "Meteora",
         "año": 2003,
         "artista": "Linkin Park"
@@ -107,7 +107,7 @@
 
      {
         "integrante": "Ivan",
-        "tipo": "musica",
+        "tipo": "Musica",
         "titulo": "Los Animales",
         "año": 2017,
         "artista": "Locoplaya"
@@ -115,7 +115,7 @@
 
     {
         "integrante": "Romina",
-        "tipo": "musica",
+        "tipo": "Musica",
         "titulo": "The color and the shape",
         "año": 1997,
         "artista": "Foo Fighters"
@@ -123,7 +123,7 @@
 
     {
         "integrante": "Romina",
-        "tipo": "musica",
+        "tipo": "Musica",
         "titulo": "The Heist",
         "año": 2012,
         "artista": "Macklemore & Ryan Lewis"
@@ -131,7 +131,7 @@
 
     {
         "integrante": "Ignacio",
-        "tipo": "musica",
+        "tipo": "Musica",
         "titulo": "Corpiños en la madrugada",
         "año": 1981,
         "artista": "Sumo"
@@ -139,7 +139,7 @@
 
     {
         "integrante": "Ignacio",
-        "tipo": "musica",
+        "tipo": "Musica",
         "titulo": "Good kid, m.A.A.d city",
         "año": 2012,
         "artista": "Kendrick Lamar"
@@ -147,7 +147,7 @@
 
     {
         "integrante": "Gonzalo",
-        "tipo": "musica",
+        "tipo": "Musica",
         "titulo": "Twenty One Pilots",
         "año": 2009,
         "artista": "Twenty One Pilots"
@@ -155,7 +155,7 @@
 
     {
         "integrante": "Gonzalo",
-        "tipo": "musica",
+        "tipo": "Musica",
         "titulo": "Daetbeat!",
         "año": 2025,
         "artista": "Tame Impala"
